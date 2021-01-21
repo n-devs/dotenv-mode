@@ -4,9 +4,11 @@ services: docker
 node_js: '14'
 
 ### Build
+directories:
+  - packages/dotenv-mode/node_modules
 script:
   # build node package
-  - cd packages/node
+  - cd packages/dotenv-mode
   - cp -f ../../README.md ./
   - yarn install
   - yarn build
