@@ -45,11 +45,9 @@ const dotenvFiles = getEnvFiles();
 
 dotenvFiles.forEach(dotenvFile => {
   if (fs.existsSync(dotenvFile)) {
-    require("dotenv-expand")(
-      require("dotenv").config({
-        path: dotenvFile
-      })
-    );
+    require("dotenv").config({
+      path: dotenvFile
+    });
   }
 });
 
