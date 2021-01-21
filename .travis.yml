@@ -1,0 +1,22 @@
+sudo: 'required'
+language: node_js
+cache: yarn
+services: npm
+node_js: '14'
+
+### Build
+script:
+  # build node package
+  - cd packages/node
+  - yarn install
+  - yarn build
+  - yarn run test:ci
+  - cd ../../
+
+## Publish
+deploy:
+  provider: script
+  script: bash deploy.sh
+  skip_cleanup: true
+  on:
+    tags: true   
