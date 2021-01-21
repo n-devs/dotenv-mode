@@ -1,7 +1,6 @@
-sudo: 'required'
 language: node_js
 cache: yarn
-services: npm
+services: docker
 node_js: '14'
 
 ### Build
