@@ -7,9 +7,6 @@ node_js: '14'
 directories:
   - packages/dotenv-mode/node_modules
 script:
-  # build node package
-  - cd packages/dotenv-mode
-  - cp -f ../../README.md ./
   - yarn install
   - yarn build
   - yarn run test:ci
