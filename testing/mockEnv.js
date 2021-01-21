@@ -1,6 +1,7 @@
-import del from "del";
-import fs from "fs";
-
+// import del from "del";
+// import fs from "fs";
+const del = require("del");
+const fs = require("fs");
 const defaults = [
     ".env.test.local",
     ".env.test",
@@ -9,13 +10,13 @@ const defaults = [
 ];
 var window;
 
-export function loadEnv() {
+function loadEnv() {
     process.argv = ["", "", "--dest", "."];
     const basePath = fs.realpathSync(process.cwd());
     window = require(`${basePath}/lib/cli`);
 }
 
-export function mockEnvFiles(files = defaults) {
+function mockEnvFiles(files = defaults) {
     const path = fs.realpathSync(process.cwd());
     files.forEach(file => {
         const env = `
@@ -26,7 +27,7 @@ export function mockEnvFiles(files = defaults) {
     });
 }
 
-export function resetMocks() {
+function resetMocks() {
     del.sync([".env*"]);
     jest.resetModules();
     delete window._env;
@@ -34,3 +35,8 @@ export function resetMocks() {
     delete process.env.BAR;
     delete process.env.EXPAND;
 }
+
+
+exports.loadEnv = loadEnv
+exports.mockEnvFiles = mockEnvFiles
+exports.resetMocks = resetMocks
