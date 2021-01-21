@@ -8,6 +8,7 @@ node_js: '14'
 script:
   # build node package
   - cd packages/node
+  - cp -f ../../README.md ./
   - yarn install
   - yarn build
   - yarn run test:ci
