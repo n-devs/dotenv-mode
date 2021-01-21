@@ -4,8 +4,6 @@ services: docker
 node_js: '14'
 
 ### Build
-directories:
-  - packages/dotenv-mode/node_modules
 script:
   - yarn install
   - yarn build
@@ -16,6 +14,5 @@ script:
 deploy:
   provider: script
   script: bash deploy.sh
-  skip_cleanup: true
   on:
     tags: true   
