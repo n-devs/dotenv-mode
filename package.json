@@ -6,7 +6,7 @@
   "types": "dist/types.d.ts",
   "scripts": {
     "test": "jest",
-    "test:ci": "jest --coverage --coverageReporters=text-lcov | coveralls",
+    "test:ci": "jest --coverage --coverageReporters=text-lcov ",
     "build": "rollup -c",
     "start": "rollup -c -w"
   },
