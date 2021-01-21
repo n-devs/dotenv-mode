@@ -41,7 +41,6 @@
   "dependencies": {
     "cross-spawn": "^6.0.5",
     "dotenv": "^8.0.0",
-    "dotenv-expand": "^5.1.0",
     "minimist": "^1.2.0"
   },
   "files": [
