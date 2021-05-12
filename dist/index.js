@@ -16,9 +16,9 @@ function writeBrowserEnvironment(env) {
   const dest = argv.d || argv.dest || "public";
   const debug = argv.debug;
   const path = `${base}/${dest}/__ENV.js`;
-  console.info("react-env: Writing runtime env", path);
+  console.info("dotenv-mode: Writing runtime env", path);
   if(debug) {
-    console.debug(`react-env: ${JSON.stringify(env, null, 2)}`);
+    console.debug(`dotenv-mode: ${JSON.stringify(env, null, 2)}`);
   }
   const populate = `window.__ENV = ${JSON.stringify(env)};`;
   fs.writeFileSync(path, populate);
